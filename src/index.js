@@ -1,13 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+// Paginas
+import App from './App';
+import Proj from './Proj';
+
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  
+    <BrowserRouter >
+    <Switch>
+      <Route path="/proyectos/:id">
+        <Proj/>
+      </Route>
+      <Route path="/">
+        <App/>
+      </Route>
+    </Switch>
+    </BrowserRouter>,
+  
   document.getElementById('root')
 );
 

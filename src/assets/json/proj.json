@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Aeropuerto Internacional de Tocumen",
+    "excerpt": "Venta e Instalación de infraestructura en el Aeropuerto Internacional de Tocumen, Panamá",
+    "catAbr": "arq",
+    "catComplete": "Arquitectura",
+    "body": "<p>En este proyecto nosotros instalamos:    <ul>        <li>300 Series Glide Plate Wall & Ceiling Expansion Joint Covers        </li>        <li>501 Series Pan System        </li>        <li>806 Series Floor Expansion Joint Covers        </li>        <li>787 Series Floor Expansion Joint Covers        </li>        <li>F520 Fire Blanket Expansion Joint System        </li>        </ul>    </p>    <p>Las marcas de los productos son:        <ul>        <li>Inpro® JointMaster®        </li>        <li>Fireline™ 520 Fire Barrier        </li>    </ul>    </p>",
+    "imgFeature": 1,
+    "maximg": 7
+  },
+  {
+    "id": 2,
+    "name": "Clínica Hospital San Fernando",
+    "excerpt": "Instalación de elementos de seguridad en Sala de Urgencias",
+    "catAbr": "arq",
+    "catComplete": "Arquitectura",
+    "body": "<p>En este proyecto nosotros instalamos:<ul><li>Protectores de Pared</li><li>Cortinas de Privacidad</ul></p><p>Las marcas de los productos son:<ul><li>Inpro® Wall & Door protection</li><li>Inpro® Shield by Panaz® cubicle curtains</li></ul></p>",
+    "imgFeature": null,
+    "maximg": null
+  },
+  {
+    "id": 3,
+    "name": "Clínica Hospital San Fernando",
+    "excerpt": "Instalación de elementos de seguridad Sala de Urgencias",
+    "catAbr": "arq",
+    "catComplete": "Arquitectura",
+    "body": "<p>    En este proyecto nosotros instalamos:<ul>    <li>Pisos de vinilo </li></ul>Las marcas de los productos son:<ul>    <li>Roppe® Northern Timbers Premium Vinyl Wood Plank    </li></ul></p>",
+    "imgFeature": null,
+    "maximg": null
+  }
+]
