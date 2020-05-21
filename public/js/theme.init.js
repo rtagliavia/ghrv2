@@ -1,7 +1,7 @@
 // Commom Plugins
 (function ($) {
   
-  "use strict";
+  // "use strict";
 
   // Scroll to Top Button.
   if (typeof theme.PluginScrollToTop !== "undefined") {

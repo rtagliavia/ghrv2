@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
+
+
 // Paginas
 import App from './App';
 import Proj from './Proj';
@@ -15,7 +17,9 @@ ReactDOM.render(
     <BrowserRouter >
     <Switch>
       <Route path="/proyectos/:id">
-        <Proj/>
+			
+        		<Proj/>
+		  
       </Route>
       <Route path="/">
         <App/>

@@ -13,7 +13,7 @@ export default class App extends Component {
       <>
         <div class="side-header-narrow-bar">
           <div class="side-header-narrow-bar-logo bg-color-dark d-flex justify-content-center">
-            <a href="index.html" class="p-3 mb-4 mt-2">
+            <a href="/" class="p-3 mb-4 mt-2">
               <img
                 alt="Porto"
                 width="40"
