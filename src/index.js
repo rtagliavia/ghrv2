@@ -3,23 +3,22 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
-
+// Bootstrap
+import "bootstrap/dist/css/bootstrap.min.css";
 
 // Paginas
 import App from './App';
 import Proj from './Proj';
 
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
 
 ReactDOM.render(
   
     <BrowserRouter >
     <Switch>
-      <Route path="/proyectos/:id">
-			
-        		<Proj/>
-		  
+      <Route path="/proyectos/:id">			
+        		<Proj/>		  
       </Route>
       <Route path="/">
         <App/>

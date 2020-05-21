@@ -1,15 +1,21 @@
-import React, { Component } from "react";
+import React, { useState, useEffect, Component } from 'react';
 import ScriptTag from "react-script-tag";
 import parse from "html-react-parser";
 import { appendScript, removeScript } from "./LoadScritp";
 import Jead from "./common/Head";
-
 import "./style.css";
-
-
 import ElFooter from "./Footer";
+import JsonProj from "./assets/json/proj.json";
+ 
 
-export default class App extends Component {
+export default class Proj extends Component {
+
+
+  componentDidMount(){
+    // const { handle } = this.props.match.params
+    // console.log(this.props.match.params)
+  }
+
   render() {
     return (
       <>
@@ -19,7 +25,7 @@ export default class App extends Component {
             <div class="bounce1"></div>
             <div class="bounce2"></div>
             <div class="bounce3"></div>
-          </div>
+          </div>  
         </div>
         <div class="side-header-narrow-bar">
           <div class="side-header-narrow-bar-logo bg-color-dark d-flex justify-content-center">
@@ -34,7 +40,7 @@ export default class App extends Component {
           </div>
           <div class="side-header-narrow-bar-content d-flex align-items-center text-center h-100">
             <strong class="side-header-narrow-bar-content-vertical">
-              Porto Template
+              GRH International
             </strong>
           </div>
           <div class="side-header-narrow-bar-bottom d-flex justify-content-center">
@@ -169,7 +175,7 @@ export default class App extends Component {
               <div class="row align-items-center">
 
                 <div class="col">
-                  <a href="#" class="portfolio-prev text-decoration-none d-block appear-animation" data-appear-animation="fadeInRightShorter">
+                  <a href="#" class="portfolio-prev text-decoration-none d-block appear-animations" data-appear-animation="fadeInRightShorter">
                     <div class="d-flex align-items-center line-height-1">
                       <i class="fas fa-arrow-left text-dark text-4 mr-3"></i>
                       <div class="d-none d-sm-block line-height-1">
@@ -183,11 +189,11 @@ export default class App extends Component {
                   <div class="row">
                     <div class="col-md-12 align-self-center p-static order-2 text-center">
                       <div class="overflow-hidden pb-2">
-                        <h1 class="text-dark font-weight-bold text-9 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="100">Porto Branding</h1>
+                        <h1 class="text-dark font-weight-bold text-9 appear-animation"s data-appear-animation="maskUp" data-appear-animation-delay="100">Porto Branding</h1>
                       </div>
                     </div>
                     <div class="col-md-12 align-self-center order-1">
-                      <ul class="breadcrumb d-block text-center appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="300">
+                      <ul class="breadcrumb d-block text-center appear-animation"s data-appear-animation="fadeIn" data-appear-animation-delay="300">
                         <li><a href="#">Home</a></li>
                         <li><a href="#">Portfolio</a></li>
                         <li class="active">Small Slider</li>
@@ -197,7 +203,7 @@ export default class App extends Component {
                 </div>
 
                 <div class="col">
-                  <a href="#" class="portfolio-next text-decoration-none d-block float-right appear-animation" data-appear-animation="fadeInLeftShorter">
+                  <a href="#" class="portfolio-next text-decoration-none d-block float-right appear-animation"s data-appear-animation="fadeInLeftShorter">
                     <div class="d-flex align-items-center text-right line-height-1">
                       <div class="d-none d-sm-block line-height-1">
                         <span class="text-dark opacity-4 text-1">NEXT PROJECT</span>
@@ -214,7 +220,7 @@ export default class App extends Component {
           <div class="container pt-2 pb-4">
 
             <div class="row pb-4 mb-2">
-              <div class="col-md-6 mb-4 mb-md-0 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="300">
+              <div class="col-md-6 mb-4 mb-md-0 appear-animation"s data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="300">
 
                 <div class="owl-carousel owl-theme nav-inside nav-inside-edge nav-squared nav-with-transparency nav-dark mt-3" data-plugin-options="{'items': 1, 'margin': 10, 'loop': false, 'nav': true, 'dots': false}">
                   <div>
@@ -234,9 +240,9 @@ export default class App extends Component {
                   </div>
                 </div>
 
-                <hr class="solid my-5 appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="1000" />
+                <hr class="solid my-5 appear-animation"s data-appear-animation="fadeIn" data-appear-animation-delay="1000" />
 
-                <div class="appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="1100">
+                <div class="appear-animation"s data-appear-animation="fadeInRightShorter" data-appear-animation-delay="1100">
                   <strong class="text-uppercase text-1 mr-3 text-dark float-left position-relative top-2">Share</strong>
                   <ul class="social-icons">
                     <li class="social-icons-facebook"><a href="http://www.facebook.com/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
@@ -248,14 +254,15 @@ export default class App extends Component {
               </div>
               <div class="col-md-6">
                 <div class="overflow-hidden">
-                  <h2 class="text-color-dark font-weight-normal text-4 mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="600">Project <strong class="font-weight-extra-bold">Description</strong></h2>
+                  <h2 class="text-color-dark font-weight-normal text-4 mb-0 appear-animation"s data-appear-animation="maskUp" data-appear-animation-delay="600">Project <strong class="font-weight-extra-bold">Description</strong></h2>
+                  
                 </div>
-                <p class="appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="800">Donec volutpat nibh sit amet libero ornare non laoreet arcu luctus. Donec id arcu quis mauris euismod placerat sit amet ut metus. Sed imperdiet fringilla sem eget euismod. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                <p class="appear-animation"s data-appear-animation="fadeInUpShorter" data-appear-animation-delay="800">Donec volutpat nibh sit amet libero ornare non laoreet arcu luctus. Donec id arcu quis mauris euismod placerat sit amet ut metus. Sed imperdiet fringilla sem eget euismod. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
 
                 <div class="overflow-hidden mt-4">
-                  <h2 class="text-color-dark font-weight-normal text-4 mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="1000">Project <strong class="font-weight-extra-bold">Details</strong></h2>
+                  <h2 class="text-color-dark font-weight-normal text-4 mb-0 appear-animation"s data-appear-animation="maskUp" data-appear-animation-delay="1000">Project <strong class="font-weight-extra-bold">Details</strong></h2>
                 </div>
-                <ul class="list list-icons list-primary list-borders text-2 appear-animation" data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1200">
+                <ul class="list list-icons list-primary list-borders text-2 appear-animation"s data-appear-animation="fadeInUpShorter" data-appear-animation-delay="1200">
                   <li><i class="fas fa-caret-right left-10"></i> <strong class="text-color-primary">Client:</strong> Okler Themes</li>
                   <li><i class="fas fa-caret-right left-10"></i> <strong class="text-color-primary">Date:</strong> January 2020</li>
                   <li><i class="fas fa-caret-right left-10"></i> <strong class="text-color-primary">Skills:</strong> <a href="#" class="badge badge-dark badge-sm badge-pill px-2 py-1 ml-1">DESIGN</a><a href="#" class="badge badge-dark badge-sm badge-pill px-2 py-1 ml-1">BRAND</a><a href="#" class="badge badge-dark badge-sm badge-pill px-2 py-1 ml-1">WEBSITES</a></li>

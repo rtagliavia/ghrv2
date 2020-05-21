@@ -19,6 +19,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "bin":{
+    "script1": "custom.js" 
+},
   "eslintConfig": {
     "extends": "react-app"
   },
