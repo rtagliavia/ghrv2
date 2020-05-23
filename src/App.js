@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ScriptTag from "react-script-tag";
 import parse from "html-react-parser";
 import { appendScript, removeScript } from "./LoadScritp";
+
 import JsonProj from "./assets/json/proj.json";
 import "./style.css";
 

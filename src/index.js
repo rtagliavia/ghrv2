@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import $ from "jquery";
 import "./index.css";
 import * as serviceWorker from "./serviceWorker";
 
@@ -19,7 +20,7 @@ const Page404 = ({ location }) => (
     <div className=" container-fluid vh-100  d-flex align-items-center margin404 imagen-fondo-404">
       <div className="row w-100">
         <div className="col-6">
-          <h1 class="margin404h2">
+          <h1 className="margin404h2">
             <b>404</b>
             <br /> Not Found
           </h1>

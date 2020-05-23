@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 
-import {Helmet} from "react-helmet";
+import { Helmet } from "react-helmet";
 
 export default class Head extends Component {
   render() {
     return (
       <>
         <Helmet>
+          {/*
           <link
             rel="shortcut icon"
             href="../img/favicon.ico"
@@ -17,6 +18,7 @@ export default class Head extends Component {
             name="viewport"
             content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no"
           />
+          */}
           <link
             href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light%7CPlayfair+Display:400"
             rel="stylesheet"
@@ -24,12 +26,14 @@ export default class Head extends Component {
           />
           <link
             rel="stylesheet"
-            href="../vendor/bootstrap/css/bootstrap.min.css"
-          />
-          <link
-            rel="stylesheet"
             href="../vendor/fontawesome-free/css/all.min.css"
           />
+          {/*
+          <link
+            rel="stylesheet"
+            href="../vendor/bootstrap/css/bootstrap.min.css"
+          />
+
           <link rel="stylesheet" href="../vendor/animate/animate.min.css" />
           <link
             rel="stylesheet"
@@ -47,6 +51,7 @@ export default class Head extends Component {
             rel="stylesheet"
             href="../vendor/magnific-popup/magnific-popup.min.css"
           />
+          */}
           <link rel="stylesheet" href="../css/theme.css" />
           <link rel="stylesheet" href="../css/theme-elements.css" />
           <link rel="stylesheet" href="../css/theme-blog.css" />
@@ -59,7 +64,9 @@ export default class Head extends Component {
           />
           <link rel="stylesheet" href="../css/skins/skin-corporate-11.css" />
           <link rel="sty.lesheet" href="../css/custom.css" />
+          {/*}
           <script src="../vendor/modernizr/modernizr.min.js"></script>
+          */}
         </Helmet>
       </>
     );
