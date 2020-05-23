@@ -4,13 +4,13 @@ import parse from "html-react-parser";
 import { appendScript, removeScript } from "./LoadScritp";
 import Jead from "./common/Head";
 import "./style.css";
-import JsonProj from "./assets/json/proj.json";
 import ProjectData from "./assets/json/projectData.js";
 import ScriptTag from "react-script-tag";
 import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 import { Animated } from "react-animated-css";
+import { TweenLite, TimelineLite } from "gsap";
 
 const Proj = (props) => {
   const projectId = parseInt(props.match.params.id) - 1;
@@ -20,121 +20,9 @@ const Proj = (props) => {
   let nextProject = ProjectData[nextProjectId];
   let prevProject = ProjectData[prevProjectId];
 
-  const [currentProjectId, setCurrentProjectId] = useState(0);
+
 
   useEffect(() => {});
-
-  const Header = () => {
-    return (
-      <header
-        id="header"
-        className="side-header side-header-lg side-header-hide d-flex"
-      >
-        <div className="header-body">
-          <div className="header-container container d-flex h-100">
-            <div className="header-column flex-column justify-content-center h-100">
-              <div className="header-row flex-row justify-content-center py-5">
-                <div className="header-logo">
-                  <a href="/">
-                    <img
-                      alt="Porto"
-                      width="100"
-                      height="48"
-                      src="../img/logo.png"
-                    />
-                  </a>
-                </div>
-              </div>
-              <div className="header-row header-row-side-header flex-row h-100 overflow-hidden pb-5">
-                <div className="header-nav header-nav-links header-nav-links-side-header header-nav-links-vertical header-nav-links-vertical-slide align-self-center">
-                  <div className="header-nav-main header-nav-main-square header-nav-main-dropdown-no-borders header-nav-main-effect-4 header-nav-main-sub-effect-1">
-                    <nav className="collapse">
-                      <ul className="nav nav-pills" id="mainNav">
-                        <li className="">
-                          <a
-                            className="dropdown-item dropdown-toggle active"
-                            href="#"
-                          >
-                            Inicio
-                          </a>
-                        </li>
-                        <li className="">
-                          <a
-                            className="dropdown-item dropdown-toggle active"
-                            href="#"
-                          >
-                            Nosotros
-                          </a>
-                        </li>
-                        <li className="">
-                          <a
-                            className="dropdown-item dropdown-toggle active"
-                            href="#"
-                          >
-                            Nuestras marcas
-                          </a>
-                        </li>
-                        <li className="">
-                          <a
-                            className="dropdown-item dropdown-toggle active"
-                            href="#"
-                          >
-                            Nuestros proyectos
-                          </a>
-                        </li>
-                        <li className="">
-                          <a
-                            className="dropdown-item dropdown-toggle active"
-                            href="#"
-                          >
-                            Contáctanos
-                          </a>
-                        </li>
-                      </ul>
-                    </nav>
-                  </div>
-                </div>
-              </div>
-              <div className="header-row justify-content-end pb-3">
-                <ul className="header-social-icons social-icons social-icons-clean">
-                  <li className="social-icons-facebook">
-                    <a
-                      href="http://www.facebook.com/"
-                      target="_blank"
-                      title="Facebook"
-                    >
-                      <i className="fab fa-facebook-f"></i>
-                    </a>
-                  </li>
-                  <li className="social-icons-twitter">
-                    <a
-                      href="http://www.twitter.com/"
-                      target="_blank"
-                      title="Twitter"
-                    >
-                      <i className="fab fa-twitter"></i>
-                    </a>
-                  </li>
-                  <li className="social-icons-linkedin">
-                    <a
-                      href="http://www.linkedin.com/"
-                      target="_blank"
-                      title="Linkedin"
-                    >
-                      <i className="fab fa-linkedin-in"></i>
-                    </a>
-                  </li>
-                </ul>
-                <p className="text-1 pt-3">
-                  © 2020 GHR International. All rights reserved
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
-    );
-  };
 
   const ProjectHeader = () => {
     return (
@@ -243,46 +131,6 @@ const Proj = (props) => {
   return (
     <>
       <Jead />
-      <div className="loading-overlay">
-        <div className="bounce-loader">
-          <div className="bounce1"></div>
-          <div className="bounce2"></div>
-          <div className="bounce3"></div>
-        </div>
-      </div>
-      <div className="side-header-narrow-bar">
-        <div className="side-header-narrow-bar-logo bg-color-dark d-flex justify-content-center">
-          <a href="/" className="p-3 mb-4 mt-2">
-            <img
-              alt="GHR International"
-              width="40"
-              height="40"
-              src="../img/logo-symbol-light.png"
-            />
-          </a>
-        </div>
-        <div className="side-header-narrow-bar-content d-flex align-items-center text-center h-100">
-          <strong className="side-header-narrow-bar-content-vertical">
-            GRH International
-          </strong>
-        </div>
-        <div className="side-header-narrow-bar-bottom d-flex justify-content-center">
-          <div className="mb-4">
-            <button className="hamburguer-btn hamburguer-btn-sticky-dark">
-              <span className="hamburguer">
-                <span></span>
-                <span></span>
-                <span></span>
-              </span>
-              <span className="close">
-                <span></span>
-                <span></span>
-              </span>
-            </button>
-          </div>
-        </div>
-      </div>
-      <Header />
       {/* Inicio de Cuerpo */}
 
       <div role="main" className="main">
@@ -375,83 +223,99 @@ const Proj = (props) => {
             </div>
             <div className="col-md-6">
               <div className="overflow-hidden">
-                <Animated animationIn="fadeInUp" animationOut="fadeOut" animationInDelay={0.4}>
-                <h2
-                  className="text-color-dark font-weight-normal text-4 mb-0  "
-                  data-appear-animation="maskUp"
-                  data-appear-animation-delay="600"
+                <Animated
+                  animationIn="fadeInUp"
+                  animationOut="fadeOut"
+                  animationInDelay={0.4}
                 >
-                  Project {` ${currentProject.projectName} `}
-                  <strong className="font-weight-extra-bold">
-                    Description
-                  </strong>
-                </h2>
+                  <h2
+                    className="text-color-dark font-weight-normal text-4 mb-0  "
+                    data-appear-animation="maskUp"
+                    data-appear-animation-delay="600"
+                  >
+                    Project {` ${currentProject.projectName} `}
+                    <strong className="font-weight-extra-bold">
+                      Description
+                    </strong>
+                  </h2>
                 </Animated>
               </div>
-              <Animated animationIn="fadeInUp" animationOut="fadeOut" animationInDelay={0.6}>
-              <p
-                className=""
-                data-appear-animation="fadeInUpShorter"
-                data-appear-animation-delay="800"
+              <Animated
+                animationIn="fadeInUp"
+                animationOut="fadeOut"
+                animationInDelay={0.6}
               >
-                {` ${currentProject.projectDescription} `}
-              </p>
+                <p
+                  className=""
+                  data-appear-animation="fadeInUpShorter"
+                  data-appear-animation-delay="800"
+                >
+                  {` ${currentProject.projectDescription} `}
+                </p>
               </Animated>
               <div className="overflow-hidden mt-4">
-              <Animated animationIn="fadeInUp" animationOut="fadeOut" animationInDelay={0.8}>
-                <h2
-                  className="text-color-dark font-weight-normal text-4 mb-0  "
-                  data-appear-animation="maskUp"
-                  data-appear-animation-delay="1000"
+                <Animated
+                  animationIn="fadeInUp"
+                  animationOut="fadeOut"
+                  animationInDelay={0.8}
                 >
-                  Project{` ${currentProject.projectName} `}
-                  <strong className="font-weight-extra-bold">Details</strong>
-                </h2>
+                  <h2
+                    className="text-color-dark font-weight-normal text-4 mb-0  "
+                    data-appear-animation="maskUp"
+                    data-appear-animation-delay="1000"
+                  >
+                    Project{` ${currentProject.projectName} `}
+                    <strong className="font-weight-extra-bold">Details</strong>
+                  </h2>
                 </Animated>
               </div>
-              <Animated animationIn="fadeInUp" animationOut="fadeOut" animationInDelay={1}>
-              <ul
-                className="list list-icons list-primary list-borders text-2  "
-                data-appear-animation="fadeInUpShorter"
-                data-appear-animation-delay="1200"
+              <Animated
+                animationIn="fadeInUp"
+                animationOut="fadeOut"
+                animationInDelay={1}
               >
-                <li>
-                  <i className="fas fa-caret-right left-10"></i>{" "}
-                  <strong className="text-color-primary">Client:</strong>{" "}
-                  {` ${currentProject.projectClientName} `}
-                </li>
-                <li>
-                  <i className="fas fa-caret-right left-10"></i>{" "}
-                  <strong className="text-color-primary">Date:</strong>{" "}
-                  {` ${currentProject.projectDate} `}
-                </li>
-                <li>
-                  <i className="fas fa-caret-right left-10"></i>{" "}
-                  <strong className="text-color-primary">Skills:</strong>{" "}
-                  {currentProject.projectSkillsUsed.map((skill, key) => {
-                    return (
-                      <a
-                        href="#"
-                        className="badge badge-dark badge-sm badge-pill px-2 py-1 ml-1"
-                        key={key}
-                      >
-                        {skill}
-                      </a>
-                    );
-                  })}
-                </li>
-                <li>
-                  <i className="fas fa-caret-right left-10"></i>{" "}
-                  <strong className="text-color-primary">Project URL:</strong>{" "}
-                  <a
-                    href={currentProject.projectURL}
-                    target="_blank"
-                    className="text-dark"
-                  >
-                    {` ${currentProject.projectURL} `}
-                  </a>
-                </li>
-              </ul>
+                <ul
+                  className="list list-icons list-primary list-borders text-2  "
+                  data-appear-animation="fadeInUpShorter"
+                  data-appear-animation-delay="1200"
+                >
+                  <li>
+                    <i className="fas fa-caret-right left-10"></i>{" "}
+                    <strong className="text-color-primary">Client:</strong>{" "}
+                    {` ${currentProject.projectClientName} `}
+                  </li>
+                  <li>
+                    <i className="fas fa-caret-right left-10"></i>{" "}
+                    <strong className="text-color-primary">Date:</strong>{" "}
+                    {` ${currentProject.projectDate} `}
+                  </li>
+                  <li>
+                    <i className="fas fa-caret-right left-10"></i>{" "}
+                    <strong className="text-color-primary">Skills:</strong>{" "}
+                    {currentProject.projectSkillsUsed.map((skill, key) => {
+                      return (
+                        <a
+                          href="#"
+                          className="badge badge-dark badge-sm badge-pill px-2 py-1 ml-1"
+                          key={key}
+                        >
+                          {skill}
+                        </a>
+                      );
+                    })}
+                  </li>
+                  <li>
+                    <i className="fas fa-caret-right left-10"></i>{" "}
+                    <strong className="text-color-primary">Project URL:</strong>{" "}
+                    <a
+                      href={currentProject.projectURL}
+                      target="_blank"
+                      className="text-dark"
+                    >
+                      {` ${currentProject.projectURL} `}
+                    </a>
+                  </li>
+                </ul>
               </Animated>
             </div>
           </div>
